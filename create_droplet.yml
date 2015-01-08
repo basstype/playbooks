@@ -1,0 +1,11 @@
+---
+- hosts: new_droplet
+  vars:
+    digital_ocean_image_id: 7111572
+    digital_ocean_size_id: 66
+    digital_ocean_region_id: 1
+    digital_ocean_ssh_key_ids: 15704
+  connection: local
+  gather_facts: false
+  roles:
+    - fawad.digital_ocean

@@ -1,0 +1,13 @@
+---
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Upgrade apt
+  apt: upgrade=yes
+
+- name: Install Sys Packages
+  apt: pkg={{ item }} state=latest
+  with_items: sys_packages
+
+- name: Make sure python-software-properties is installed
+  apt: pkg=python-software-properties state=latest

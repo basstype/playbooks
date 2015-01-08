@@ -1,0 +1,15 @@
+---
+- name: Download Erlang Solutions repo
+  command: wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+
+- name: Install Erlang Solutions repo
+  command: dpkg -i erlang-solutions_1.0_all.deb
+
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Install ESL Erlang
+  apt: pkg=esl-erlang state=latest
+
+- name: Install Elixir
+  apt: pkg=elixir state=latest
